@@ -26,6 +26,7 @@ public class Main_27 {
 
         // но можно создать cars через
         ArrayList<Car> cars = new ArrayList<>();
+
         cars.add(car1);
         cars.add(car2);
         cars.add(car3);

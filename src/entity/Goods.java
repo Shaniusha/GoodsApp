@@ -10,6 +10,13 @@ public abstract class Goods implements Comparable<Goods>{
     private String name;//наименование'
     private Float price;//цена
     private LocalDate data;
+    private Float number = 0f;//кол-во товара в самом начале = 0
+
+
+    public Goods(String type, String name, Float price, LocalDate date, Float number){
+        this(type,name,price,date);
+        this.number = number;
+    }
 
     public Goods(String type, String name, Float price, LocalDate date) {
         this.type = type;
@@ -56,9 +63,15 @@ public abstract class Goods implements Comparable<Goods>{
         return data;
     }
 
+    public Float getNumber() {
+        return number;
+    }
+
+    public void setNumber(Float number) {
+        this.number = number;
+    }
+
     public void setData(LocalDate data) {
         this.data = data;
     }
-
-
 }

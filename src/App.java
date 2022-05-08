@@ -11,6 +11,7 @@ import java.util.List;
 public class App {//используем пакет entity
     public static void main(String[] args) {
         List<Goods> storage = new ArrayList<>();
+
         storage.add(new Laptop("Samsung", 2017,"MD",1000F, LocalDate.of(2022,3,
                 17)));
         storage.add(new Laptop("Asus", 2019,"Zen",1050F,LocalDate.of(2022,2,

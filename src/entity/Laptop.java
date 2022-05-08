@@ -2,8 +2,8 @@ package entity;
 
 import java.time.LocalDate;
 
-public class Laptop extends Goods{
-    private String model;
+public class Laptop extends Goods{//class Laptop наследуется от класса Goods,кот-ый реализует интерфейс Comparable
+    private String model;         //значит нужно написать метод compareTo
     private Integer year;
 
     public Laptop(String model, Integer year, String name, Float price, LocalDate date) {
