@@ -28,7 +28,7 @@ public abstract class Goods implements Comparable<Goods>{
 
     }
     //метод выводит словесное описание нашего товара
-    //concat-это метд соединения вместо +
+    //concat-это метод соединения вместо +
     @Override//обозначает перекрыть
     public String toString() {
         return type.concat(" : ").concat(name).concat(" : ").concat(price.toString()

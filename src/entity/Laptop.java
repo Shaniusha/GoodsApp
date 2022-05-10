@@ -40,14 +40,20 @@ public class Laptop extends Goods{//class Laptop наследуется от к�
             return -1;
         }
 
-        //так можно записать,это одно и то же
-        //      return this.year - o.year;
+        //все что в методе  public int compareTo(Goods another) можно записать одной строкой
+        // public int compareTo(Goods another){
+        // try {
+        //      Laptop o = (Laptop) another;
+        //         return this.year - o.year;
+        // }
+        // catch (Exception e){
+        //      return -1;
+        // }
     }
 
     @Override
     public String toString() {
         return  "model: " + model + " , " +
                 "year: " + year;
-
     }
 }

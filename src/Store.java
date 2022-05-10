@@ -6,8 +6,7 @@ import java.util.List;
 public class Store {
    private final List<Goods> storage = new ArrayList<>();
 
-   public void add(Goods goods) {//метод добавляет товары на склад
+   public void addStock(Goods goods) {//метод добавляет товары на склад Stock-Запас
        storage.add(goods);
-
-    }
+   }
 }
