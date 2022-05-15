@@ -7,7 +7,7 @@ public class Laptop extends Goods{//class Laptop наследуется от к�
     private Integer year;
 
     public Laptop(String model, Integer year, String name, Float price, LocalDate date) {
-        super("Laptop",name,price,date);
+        super("Laptop",name,price,date);//родительский конструктор
         this.model = model;
         this.year = year;
 
@@ -50,10 +50,10 @@ public class Laptop extends Goods{//class Laptop наследуется от к�
         //      return -1;
         // }
     }
-
     @Override
     public String toString() {
-        return  "model: " + model + " , " +
-                "year: " + year;
+        String partner = super.toString();//вызываем метод родителя
+        return "model: " + model + " , " +
+                "year: " + year + " : " + partner;
     }
 }

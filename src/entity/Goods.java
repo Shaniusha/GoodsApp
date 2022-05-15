@@ -32,7 +32,7 @@ public abstract class Goods implements Comparable<Goods>{
     @Override//обозначает перекрыть
     public String toString() {
         return type.concat(" : ").concat(name).concat(" : ").concat(price.toString()
-                .concat(" : ").concat(data.toString()));
+                .concat(" : ").concat(data.toString())  + " : " + getNumber().toString());
     }
 
     public String getType() {
