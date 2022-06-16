@@ -1,6 +1,7 @@
 package entity;
 
 import java.time.LocalDate;
+import java.util.Objects;
 // StartMain и App внизу отдельные классы  тоже относятся к package entity
 
 
@@ -10,12 +11,12 @@ public abstract class Goods implements Comparable<Goods>{
     private String name;//наименование'
     private Float price;//цена
     private LocalDate data;
-    private Float number = 0f;//кол-во товара в самом начале = 0
+    private Float quantity = 0f;//кол-во товара в самом начале = 0
 
 
-    public Goods(String type, String name, Float price, LocalDate date, Float number){
+    public Goods(String type, String name, Float price, LocalDate date, Float counter){
         this(type,name,price,date);
-        this.number = number;
+        this.quantity = counter;
     }
 
     public Goods(String type, String name, Float price, LocalDate date) {
@@ -32,7 +33,21 @@ public abstract class Goods implements Comparable<Goods>{
     @Override//обозначает перекрыть
     public String toString() {
         return type.concat(" : ").concat(name).concat(" : ").concat(price.toString()
-                .concat(" : ").concat(data.toString())  + " : " + getNumber().toString());
+                .concat(" : ").concat(data.toString())  + " : " + getCounter().toString());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Goods)) return false;
+        Goods goods = (Goods) o;
+        return Objects.equals(getType(), goods.getType()) && Objects.equals(getName(), goods.getName()) && Objects.equals(getPrice(),
+                goods.getPrice()) && Objects.equals(getData(), goods.getData()) && Objects.equals(getCounter(), goods.getCounter());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getType(), getName(), getPrice(), getData(), getCounter());
     }
 
     public String getType() {
@@ -63,12 +78,12 @@ public abstract class Goods implements Comparable<Goods>{
         return data;
     }
 
-    public Float getNumber() {
-        return number;
+    public Float getCounter() {
+        return quantity;
     }
 
-    public void setNumber(Float number) {
-        this.number = number;
+    public void setCounter(Float counter) {
+        this.quantity = counter;
     }
 
     public void setData(LocalDate data) {

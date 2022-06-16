@@ -1,6 +1,7 @@
 package entity;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Laptop extends Goods{//class Laptop наследуется от класса Goods,кот-ый реализует интерфейс Comparable
     private String model;         //значит нужно написать метод compareTo
@@ -55,5 +56,19 @@ public class Laptop extends Goods{//class Laptop наследуется от к�
         String partner = super.toString();//вызываем метод родителя
         return "model: " + model + " , " +
                 "year: " + year + " : " + partner;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Laptop)) return false;
+        if (!super.equals(o)) return false;
+        Laptop laptop = (Laptop) o;
+        return Objects.equals(getModel(), laptop.getModel()) && Objects.equals(getYear(), laptop.getYear());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getModel(), getYear());
     }
 }
